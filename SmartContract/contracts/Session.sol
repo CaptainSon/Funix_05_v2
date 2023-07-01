@@ -13,7 +13,7 @@ contract Session {
     uint public proposePrice;
     uint public finalPrice;
     uint multi = 10 ** 18;
-    mapping(address => uint) priceVoteByParticipant;
+    mapping(address => uint) public priceVoteByParticipant;
     Main MainContract;
 
     //enum State { CREATE,VOTTING, CLOSING,CLOSED }
@@ -21,6 +21,7 @@ contract Session {
 
     event Vote(address account, uint numberVote);
     event CaclculatePropose(uint numberPropose);
+    event CloseSession(uint priceFinal);
     event StateChange(string State);
 
     constructor(
@@ -81,16 +82,6 @@ contract Session {
         emit StateChange("Votting");
     }
 
-    function alowClosingState() public onlyAdmin onlyState(State.VOTTING) {
-        state = State.CLOSING;
-        emit StateChange("Closing");
-    }
-
-    function alowClosedSate() public onlyAdmin onlyState(State.VOTTING) {
-        state = State.CLOSED;
-        emit StateChange("Closed");
-    }
-
     function getState() public view returns (State) {
         return state;
     }
@@ -110,8 +101,7 @@ contract Session {
     function caclculatePropose()
         public
         onlyAdmin
-        onlyState(State.CLOSING)
-        returns (uint)
+        onlyState(State.VOTTING)
     {
         uint numerator = 0;
         uint sumDeviation = 0;
@@ -127,20 +117,15 @@ contract Session {
             sumDeviation += deviPaticipant;
         }
 
-        proposePrice =
-            numerator /
-            (100 * multi * participantJoinSession.length);
+        proposePrice = numerator /(100 * multi * participantJoinSession.length - sumDeviation);
+
+        state = State.CLOSING;
+        emit StateChange("Closing");
         emit CaclculatePropose(proposePrice);
-        return proposePrice;
     }
 
-    function updatePropose(
-        uint _newPropose
-    ) public onlyAdmin onlyState(State.CLOSING) {
-        finalPrice = _newPropose;
-    }
-
-    function calculateDeviation() public onlyAdmin onlyState(State.CLOSING) {
+    function calculateDeviation(uint256 _finalPrice) public onlyAdmin onlyState(State.CLOSING) {
+        finalPrice = _finalPrice;
         for (uint i = 0; i < participantJoinSession.length; i += 1) {
             address addPaticipant = participantJoinSession[i];
             uint deviPaticipant = MainContract.getDeviationParticipant(
@@ -168,42 +153,9 @@ contract Session {
                 deviationForParticipan,
                 numberOfJoinedSession + 1
             );
-            state = State.CLOSED;
         }
-    }
-
-    function getSessionDetailForuser()
-        external
-        view
-        returns (SessionDetail memory)
-    {
-        SessionDetail memory _session = SessionDetail({
-            sessionAddress: address(this),
-            productName: productName,
-            productDescription: productDescription,
-            productImages: productImages,
-            proposedPrice: finalPrice,
-            finalPrice: finalPrice,
-            state: state
-        });
-        return _session;
-    }
-
-    function getSessionDetailforAdmin()
-        external
-        view
-        onlyAdmin
-        returns (SessionDetail memory)
-    {
-        SessionDetail memory _session = SessionDetail({
-            sessionAddress: address(this),
-            productName: productName,
-            productDescription: productDescription,
-            productImages: productImages,
-            proposedPrice: finalPrice,
-            finalPrice: finalPrice,
-            state: state
-        });
-        return _session;
+        state = State.CLOSED;
+        emit StateChange("CLOSED");
+        emit CloseSession(finalPrice);
     }
 }

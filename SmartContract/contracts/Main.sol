@@ -21,7 +21,16 @@ contract Main {
         string fullName_new,
         string email_new
     );
-    event CreateSession(address sessionAddress);
+
+    event UpdateUserAdmin(
+        address account,
+        string fullName_new,
+        string email_new, 
+        uint256 numJoinSessinon_new, 
+        uint256 deviationNew
+    );
+
+    event CreateSession(address sessionAddress, string name, string description, string[] image );
 
     address public admin;
     address[] public addressParticipant;
@@ -80,7 +89,7 @@ contract Main {
             msg.sender
         );
         addressSessions.push(address(newSession));
-        emit CreateSession(address(newSession));
+        emit CreateSession(address(newSession),_productName, _productDescription, _productImage);
     }
 
     function updateInfomationByUser(
@@ -102,17 +111,14 @@ contract Main {
         address _account,
         string memory _fullName,
         string memory _email,
-        uint _numberOfJoinedSession,
-        uint _deviation
-    ) public onlySession {
-        require(
-            participants[_account].account == _account,
-            "Main: unregisted user or wrong account"
-        );
+        uint256 _numberOfJoinedSession,
+        uint256 _deviation
+    ) public onlyAdmin {
         participants[_account].fullName = _fullName;
         participants[_account].email = _email;
         participants[_account].numberOfJoinedSession = _numberOfJoinedSession;
         participants[_account].deviation = _deviation;
+        emit UpdateUserAdmin(_account, _fullName,_email, _numberOfJoinedSession, _deviation);
     }
 
     function getParticipantAccount(
