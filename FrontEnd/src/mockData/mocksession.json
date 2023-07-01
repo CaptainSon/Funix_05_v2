@@ -1,0 +1,42 @@
+[
+    {
+        "productName": "productName",
+        "addressSession": "0x52f96C34c54BA1FC43087D34cE610a35D3C642bA",
+        "participantsVoted": 2,
+        "productDescription": "productDescription",
+        "productImage": "http://localhost:8080/ipfs/QmZjeSx2WvQcCt9QKNV7hS7Q3fBhLMKVwJLUjD4ingNFZR/03.png",
+        "proposePrice": 1,
+        "finalPrice": 10,
+        "state": 0
+    },
+    {
+        "productName": "productName2",
+        "addressSession": "0x52f96C34c54BA1FC43087D34cE610a35D3C642bA",
+        "participantsVoted": 3,
+        "productDescription": "productDescription2",
+        "productImage": "http://localhost:8080/ipfs/QmZjeSx2WvQcCt9QKNV7hS7Q3fBhLMKVwJLUjD4ingNFZR/04.png",
+        "proposePrice": 1,
+        "finalPrice": 10,
+        "state": 3
+    },
+    {
+        "productName": "3",
+        "addressSession": "0x52f96C34c54BA1FC43087D34cE610a35D3C642bA",
+        "participantsVoted": 2,
+        "productDescription": " khong co gi ca dau may thang dau buoi re rach nayf",
+        "productImage": "http://localhost:8080/ipfs/QmZjeSx2WvQcCt9QKNV7hS7Q3fBhLMKVwJLUjD4ingNFZR/10.png",
+        "proposePrice": 1,
+        "finalPrice": 10,
+        "state": 1
+    },
+    {
+        "productName": "productName3",
+        "addressSession": "0x52f96C34c54BA1FC43087D34cE610a35D3C642bA",
+        "participantsVoted": 2,
+        "productDescription": "productDescription3",
+        "productImage": "http://localhost:8080/ipfs/QmZjeSx2WvQcCt9QKNV7hS7Q3fBhLMKVwJLUjD4ingNFZR/11.png",
+        "proposePrice": 1,
+        "finalPrice": 10,
+        "state": 1
+    }
+]

@@ -11,3 +11,7 @@ REPORT_GAS=true npx hardhat test
 npx hardhat node
 npx hardhat run scripts/deploy.js
 ```
+
+
+deploy: `npx hardhat run scripts/deploy.js --network polygon_mumbai`
+verify: `npx hardhat verify CONTRACT_ADDR --network polygon_mumbai`

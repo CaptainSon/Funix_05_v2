@@ -1,0 +1,235 @@
+.user-container {
+    margin-top: 70px;
+    margin-left: 50px;
+    min-width: 320px;
+}
+
+.user_and_product {
+    background-color: white;
+    margin-left: 400px;
+    margin-right: 400px;
+    min-height: 85vh;
+    display: flex;
+    border-radius: 10px;
+    box-shadow: 0 5px 7px 0 #c5c2c2;
+}
+
+.home-container {
+    padding-top: 120px;
+    background-color: #F2F2F2;
+    min-height: 87vh;
+}
+
+.information_user {
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #D76AC9;
+}
+
+.text_user_info {
+    font-size: 21px;
+    font-weight: 450;
+    margin-bottom: 35px;
+    color: #D76AC9;
+}
+
+.init_modal {
+    width: 650px;
+    height:450px;
+    background-color: white;
+    border: 2px solid #ec91df;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom:auto;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 5px 7px 0 #c5c2c2;
+}
+
+.button_update_user_info {
+    font-size: 19px;
+    font-weight: 550;
+    margin-top: 20px;
+    height: 40px;
+    width: 100px;
+    background-color: #D76AC9;
+    border: 1px solid #D76AC9;
+    border-radius: 7px;
+    color: white;
+    box-shadow: 0 5px 7px 0 #c5c2c2;
+}
+
+.update_user_title {
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    font-size: 23px;
+    font-weight: 450;
+
+}
+
+.update_name_and_email_container {
+    margin-top: 70px;
+}
+
+.update_user {
+    margin-left: 115px;
+}
+
+.text_update_user {
+    font-size: 21px;
+    margin-right: 20px;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.questtion {
+    font-size: 21px;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.text_product_infor_choose {
+    margin-left: 4px;
+    font-size: 21px;
+    margin-right: 4px;
+    font-weight: 550;
+    font-style: normal;
+}
+
+.group_input {
+    margin-bottom: 10px;
+}
+.text_email_update {
+    margin-right: 23px;
+}
+
+.name_user_update {
+    width: 250px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font-size: 20px;
+    font-weight: 550;
+    font-style: normal;
+}
+
+.button_container_update {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.buttonUpdate {
+    font-size: 17px;
+    font-weight: 550;
+    height: 35px;
+    width: 80px;
+    background-color: #e6a626;
+    border: 1px solid #e6a626;
+    border-radius: 7px;
+    color: white;
+    box-shadow: 0 5px 7px 0 #c5c2c2;
+    margin-right: 30px;
+}
+
+.buttonCancel {
+    font-size: 17px;
+    font-weight: 550;
+    height: 35px;
+    width: 80px;
+    background-color: #08ceed;
+    border: 1px solid #08ceed;
+    border-radius: 7px;
+    color: white;
+    box-shadow: 0 5px 7px 0 #c5c2c2;
+}
+
+.button_vote {
+    font-size: 18px;
+    font-weight: 550;
+    height: 33px;
+    width: 80px;
+    background-color: greenyellow;
+    border: 1px solid greenyellow;
+    border-radius: 7px;
+    color: white;
+}
+
+.button_vote:hover {
+    background-color: rgb(6, 200, 6);
+}
+
+.process_update {
+    display: flex;
+    justify-content: center;
+}
+
+.text_question {
+    margin-top: 70px;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.text_success {
+    color: greenyellow;
+    display: flex;
+    justify-content: center;
+}
+
+.text_error {
+    color: red;
+    display: flex;
+    justify-content:center;
+}
+
+.text_pending {
+    color: rgb(242, 191, 7);
+}
+
+.button_after_tx {
+    margin-top: 70px;
+    display: flex;
+    justify-content:center;
+}
+
+.input_pricing {
+    font-size: 19px;
+    font-weight:550;
+    width: 90px;
+    height: 25px;
+    border: 2px solid #c5c2c2;
+    border-radius: 7px;
+    text-align: center;
+    margin-right: 20px;
+    
+}
+
+.pricing_vote_container {
+    margin-top: 25px;
+}
+
+.pricing_title {
+    margin-top: 3px;
+}
+
+.text_vote_ready {
+    display: flex;
+    justify-content: center;
+}
+
+.question_container {
+    justify-content:center;
+    display: flex;
+    margin-top: 80px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

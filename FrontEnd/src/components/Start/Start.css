@@ -1,0 +1,40 @@
+.startContainer {
+    margin-top: 200px;
+}
+
+.infoAndImage {
+    display: flex;
+    margin-left: 400px;
+}
+
+.infoContainer {
+    margin-top: 100px;
+}
+
+.textFunixPricingChain {
+    color:#D76AC9;
+    font-size:40px;
+    font-weight: 600;
+}
+
+.textDetail {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 19px;
+}
+
+.button {
+    font-size: 23px;
+    font-weight: 600;
+    height: 50px;
+    width: 200px;
+    background-color: #D76AC9;
+    border: 1px solid #D76AC9;
+    border-radius: 15px;
+    color: white;
+    box-shadow: 0 5px 7px 0 #c5c2c2;
+}
+
+.button:hover {
+    background-color: #b84eaa;
+}
